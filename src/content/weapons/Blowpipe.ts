@@ -28,7 +28,7 @@ export class Blowpipe extends RangedWeapon {
       },
       other: {
         meleeStrength: 0,
-        rangedStrength: 20 + 35,  // simulating dragon darts atm
+        rangedStrength: 20 + 17,  // simulating dragon darts atm
         magicDamage: 0,
         prayer: 0
       },
@@ -74,19 +74,19 @@ export class Blowpipe extends RangedWeapon {
     }
     return 2
   }
-  
-  
+
+
   get weight(): number {
     return 0.5
   }
 
   specialAttack(from: Unit, to: Unit, bonuses: AttackBonuses = {}, options: ProjectileOptions = {}) {
-    
+
     bonuses.isSpecialAttack = true;
     // BP special attack takes an extra tick to land
     options.reduceDelay = -1;
     super.attack(from, to, bonuses)
-    
+
     const healAttackerBy = Math.floor(this.damageRoll / 2);
     from.currentStats.hitpoint += healAttackerBy;
     from.currentStats.hitpoint = Math.min(from.currentStats.hitpoint, from.stats.hitpoint);
@@ -108,11 +108,11 @@ export class Blowpipe extends RangedWeapon {
   get itemName(): ItemName {
     return ItemName.TOXIC_BLOWPIPE
   }
-  
+
   get isTwoHander(): boolean {
     return true;
   }
-  
+
   hasSpecialAttack(): boolean {
     return true;
   }

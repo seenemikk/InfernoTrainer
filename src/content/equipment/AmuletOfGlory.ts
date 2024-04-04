@@ -1,44 +1,43 @@
+import { Necklace } from "../../sdk/gear/Necklace";
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
-import InventImage from '../../assets/images/equipment/Ring_of_suffering_imbued.png';
-import { Ring } from "../../sdk/gear/Ring";
+import InventImage from '../../assets/images/equipment/Amulet_of_glory.png';
 import { ItemName } from "../../sdk/ItemName";
 
-export class RingOfSufferingImbued extends Ring{
+export class AmuletOfGlory extends Necklace{
   inventorySprite: HTMLImageElement = ImageLoader.createImage(this.inventoryImage)
 
   get inventoryImage () {
     return InventImage
   }
   get itemName(): ItemName {
-    return ItemName.RING_OF_SUFFERING_I
+    return ItemName.AMULET_OF_GLORY
   }
-
   get weight(): number {
-    return 0.006;
+    return 0.01;
   }
 
   constructor() {
     super();
     this.bonuses = {
       attack: {
-        stab: 0,
-        slash: 0,
-        crush: 0,
-        magic: 0,
-        range: 0
+        stab: 10,
+        slash: 10,
+        crush: 10,
+        magic: 10,
+        range: 10
       },
       defence: {
-        stab: 20,
-        slash: 20,
-        crush: 20,
-        magic: 20,
-        range: 20
+        stab: 3,
+        slash: 3,
+        crush: 3,
+        magic: 3,
+        range: 3
       },
       other: {
-        meleeStrength: 0,
+        meleeStrength: 6,
         rangedStrength: 0,
         magicDamage: 0,
-        prayer: 4
+        prayer: 3
       },
       targetSpecific: {
         undead: 0,

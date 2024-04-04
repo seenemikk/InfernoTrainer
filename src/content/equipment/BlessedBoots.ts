@@ -1,20 +1,19 @@
+import { Feet } from "../../sdk/gear/Feet";
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
-import InventImage from '../../assets/images/equipment/Ring_of_suffering_imbued.png';
-import { Ring } from "../../sdk/gear/Ring";
+import InventImage from '../../assets/images/equipment/Blessed_boots.png';
 import { ItemName } from "../../sdk/ItemName";
 
-export class RingOfSufferingImbued extends Ring{
+export class BlessedBoots extends Feet{
   inventorySprite: HTMLImageElement = ImageLoader.createImage(this.inventoryImage)
 
   get inventoryImage () {
     return InventImage
   }
   get itemName(): ItemName {
-    return ItemName.RING_OF_SUFFERING_I
+    return ItemName.BLESSED_BOOTS
   }
-
   get weight(): number {
-    return 0.006;
+    return 1.4;
   }
 
   constructor() {
@@ -24,21 +23,21 @@ export class RingOfSufferingImbued extends Ring{
         stab: 0,
         slash: 0,
         crush: 0,
-        magic: 0,
-        range: 0
+        magic: -10,
+        range: 7
       },
       defence: {
-        stab: 20,
-        slash: 20,
-        crush: 20,
-        magic: 20,
-        range: 20
+        stab: 4,
+        slash: 4,
+        crush: 4,
+        magic: 4,
+        range: 4
       },
       other: {
         meleeStrength: 0,
         rangedStrength: 0,
         magicDamage: 0,
-        prayer: 4
+        prayer: 1
       },
       targetSpecific: {
         undead: 0,

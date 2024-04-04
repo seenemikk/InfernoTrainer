@@ -2,15 +2,19 @@ import { UnitOptions } from "../../../sdk/Unit";
 
 import { JusticiarFaceguard } from '../../equipment/JusticiarFaceguard';
 import { NecklaceOfAnguish } from '../../equipment/NecklaceOfAnguish';
+import { AmuletOfGlory } from '../../equipment/AmuletOfGlory';
 import { ArmadylChestplate } from '../../equipment/ArmadylChestplate';
 import { ArmadylChainskirt } from '../../equipment/ArmadylChainskirt';
 import { PegasianBoots } from '../../equipment/PegasianBoots';
+import { BlessedBoots } from '../../equipment/BlessedBoots';
+import { ImbuedGodCape } from '../../equipment/ImbuedGodCape';
 import { AvasAssembler } from '../../equipment/AvasAssembler';
 import { AvasAccumulator } from '../../equipment/AvasAccumulator';
 import { HolyBlessing } from '../../equipment/HolyBlessing';
 import { OccultNecklace } from '../../equipment/OccultNecklace';
 import { BarrowsGloves } from '../../equipment/BarrowsGloves';
 import { RingOfSufferingImbued } from '../../equipment/RingOfSufferingImbued';
+import { RingOfShadows } from '../../equipment/RingOfShadows';
 import { SlayerHelmet } from '../../equipment/SlayerHelmet';
 import { CrystalHelm } from '../../equipment/CrystalHelm';
 import { CrystalBody } from '../../equipment/CrystalBody';
@@ -20,6 +24,7 @@ import { BowOfFaerdhinen } from '../../weapons/BowOfFaerdhinen';
 import { JusticiarChestguard } from '../../equipment/JusticiarChestguard'
 import { JusticiarLegguards } from '../../equipment/JusticiarLegguards'
 import { KodaiWand } from '../../weapons/KodaiWand'
+import { AncientSceptre } from '../../weapons/AncientSceptre'
 import { DragonArrows } from '../../equipment/DragonArrows'
 import { RobinhoodHat } from '../../equipment/RobinHoodHat'
 import { GuthixRobetop } from '../../equipment/GuthixRobeTop'
@@ -44,6 +49,7 @@ import { StaminaPotion } from '../../items/StaminaPotion'
 import { SaradominBrew } from '../../items/SaradominBrew'
 import { SuperRestore } from '../../items/SuperRestore'
 import { BastionPotion } from '../../items/BastionPotion'
+import { RangingPotion } from '../../items/RangingPotion'
 
 import { TwistedBow } from '../../weapons/TwistedBow'
 import { Blowpipe } from '../../weapons/Blowpipe'
@@ -69,8 +75,8 @@ export class InfernoLoadout {
 
 
   loadoutMaxTbow() {
-    return { 
-      equipment: { 
+    return {
+      equipment: {
         weapon: new KodaiWand(),
         offhand: new CrystalShield(),
         helmet: new JusticiarFaceguard(),
@@ -81,24 +87,24 @@ export class InfernoLoadout {
         legs: new AncestralRobebottom(),
         feet: new PegasianBoots(),
         gloves: new BarrowsGloves(),
-        ring: new RingOfSufferingImbued(), 
+        ring: new RingOfSufferingImbued(),
       },
-      inventory: [ 
+      inventory: [
         new Blowpipe(), new ArmadylChestplate(), new TwistedBow(), new JusticiarChestguard(),
         new NecklaceOfAnguish(), new ArmadylChainskirt(), null, new JusticiarLegguards(),
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(), 
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
       ]
     };
   }
 
   loadoutMaxFbow() {
 
-    return { 
-      equipment: { 
+    return {
+      equipment: {
         weapon: new KodaiWand(),
         offhand: new CrystalShield(),
         helmet: new CrystalHelm(),
@@ -109,27 +115,50 @@ export class InfernoLoadout {
         legs: new AncestralRobebottom(),
         feet: new PegasianBoots(),
         gloves: new BarrowsGloves(),
-        ring: new RingOfSufferingImbued(), 
+        ring: new RingOfSufferingImbued(),
       },
-      inventory: [ 
+      inventory: [
         new Blowpipe(), new CrystalBody(), new BowOfFaerdhinen(), new JusticiarChestguard(),
         new NecklaceOfAnguish(), new CrystalLegs(), null, new JusticiarLegguards(),
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(), 
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
       ]
     };
   }
 
-  // loadoutBudgetFbow() {
-
-  // }
+  loadoutMikuke() {
+    return {
+      equipment: {
+        weapon: new AncientSceptre(),
+        offhand: new CrystalShield(),
+        helmet: new CrystalHelm(),
+        necklace: new AmuletOfGlory(),
+        cape: new ImbuedGodCape(),
+        ammo: new HolyBlessing(),
+        chest: new CrystalBody(),
+        legs: new CrystalLegs(),
+        feet: new BlessedBoots(),
+        gloves: new BarrowsGloves(),
+        ring: new RingOfShadows(),
+      },
+      inventory: [
+        new Blowpipe(), null, null, null,
+        new AvasAssembler(), new BowOfFaerdhinen, null, null,
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new RangingPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
+      ]
+    };
+  }
 
   loadoutRcb() {
-    return { 
-      equipment: { 
+    return {
+      equipment: {
         weapon: new AncientStaff(),
         offhand: new CrystalShield(),
         helmet: new SaradominCoif(),
@@ -140,24 +169,24 @@ export class InfernoLoadout {
         legs: new AhrimsRobeskirt(),
         feet: new PegasianBoots(),
         gloves: new BarrowsGloves(),
-        ring: new RingOfSufferingImbued(), 
+        ring: new RingOfSufferingImbued(),
       },
-      inventory: [ 
+      inventory: [
         new Blowpipe(), new RuneCrossbow(), new DiamondBoltsE(), new JusticiarFaceguard(),
         new NecklaceOfAnguish(), new SaradominBody(), new SaradominChaps(), new JusticiarChestguard(),
         null, new SaradominBrew(), new SuperRestore(), new JusticiarLegguards(),
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(), 
-        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(), 
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
+        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
       ]
     };
   }
 
   loadoutZerker() {
 
-    return { 
-      equipment: { 
+    return {
+      equipment: {
         weapon: new KodaiWand(),
         offhand: new RuneKiteshield(),
         helmet: new SaradominCoif(),
@@ -168,24 +197,24 @@ export class InfernoLoadout {
         legs: new SaradominChaps(),
         feet: new RangerBoots(),
         gloves: new BarrowsGloves(),
-        ring: new RingOfSufferingImbued(), 
+        ring: new RingOfSufferingImbued(),
       },
-      inventory: [ 
+      inventory: [
         new Blowpipe(), new TwistedBow(), null, null,
         new NecklaceOfAnguish(), new SaradominBody(), null, null,
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(), 
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
       ]
     };
   }
 
   loadoutPure() {
 
-    return { 
-      equipment: { 
+    return {
+      equipment: {
         weapon: new KodaiWand(),
         offhand: new MagesBook(),
         helmet: new RobinhoodHat(),
@@ -196,16 +225,16 @@ export class InfernoLoadout {
         legs: new BlackDhideChaps(),
         feet: new RangerBoots(),
         gloves: new BlackDhideVambraces(),
-        ring: new RingOfSufferingImbued(), 
+        ring: new RingOfSufferingImbued(),
       },
-      inventory: [ 
+      inventory: [
         new Blowpipe(), new TwistedBow(), null, null,
         new NecklaceOfAnguish(), null, null, null,
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
         new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
-        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(), 
-        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(), 
-        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(), 
+        new SaradominBrew(), new SaradominBrew(), new SuperRestore(), new SuperRestore(),
+        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
+        new BastionPotion(), new StaminaPotion(), new SuperRestore(), new SuperRestore(),
       ]
     };
   }
@@ -227,17 +256,25 @@ export class InfernoLoadout {
     player.stats.defence = 99;
     player.currentStats.defence = 99;
     switch (this.loadoutType) {
-      case "zerker": 
+      case "zerker":
         player.stats.prayer = 52;
         player.currentStats.prayer = 52;
         player.stats.defence = 45;
         player.currentStats.defence = 45;
         break;
-      case "pure": 
+      case "pure":
         player.stats.prayer = 52;
         player.currentStats.prayer = 52;
         player.stats.defence = 1;
         player.currentStats.defence = 1;
+        break;
+      case "mikuke":
+        player.stats.prayer = 80;
+        player.currentStats.prayer = 80;
+        player.stats.defence = 88;
+        player.currentStats.defence = 88;
+        player.stats.magic = 95;
+        player.currentStats.magic = 95;
         break;
     }
 
@@ -253,14 +290,17 @@ export class InfernoLoadout {
       case "max_fbow":
         loadout = this.loadoutMaxFbow();
         break;
-      case "zerker": 
+      case "zerker":
         loadout = this.loadoutZerker();
         break;
-      case "pure": 
+      case "pure":
         loadout = this.loadoutPure();
         break;
-      case "rcb": 
+      case "rcb":
         loadout = this.loadoutRcb();
+        break;
+      case "mikuke":
+        loadout = this.loadoutMikuke();
         break;
     }
 
@@ -307,5 +347,5 @@ export class InfernoLoadout {
 
     return loadout;
   }
-  
+
 }
