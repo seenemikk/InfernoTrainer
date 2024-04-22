@@ -151,7 +151,7 @@ export class Mob extends Unit {
       let ySpace = every(yTiles.map((location: Location) => Pathing.canTileBePathedTo(this.region, location.x, location.y, 1, this.consumesSpace as Mob)), Boolean)
       const both = xSpace && ySpace;
 
-      // if (this.mobName() === EntityName.JAL_AK){ 
+      // if (this.mobName() === EntityName.JAL_AK){
       //   this.tcc =  xTiles; //xTiles.concat(yTiles);
       // }
 
@@ -161,7 +161,7 @@ export class Mob extends Unit {
         if (!xSpace) {
           yTiles = this.getYMovementTiles(0, yOff);
           ySpace = every(yTiles.map((location: Location) => Pathing.canTileBePathedTo(this.region, location.x, location.y, 1, this.consumesSpace as Mob)), Boolean)
-        }        
+        }
       }
 
       if (both) {
@@ -186,7 +186,7 @@ export class Mob extends Unit {
         xTiles.push({
           x: this.location.x - 1,
           y: this.location.y - i
-        })  
+        })
       }
 
     }else if (xOff === 1){
@@ -196,7 +196,7 @@ export class Mob extends Unit {
         xTiles.push({
           x: this.location.x + this.size,
           y: this.location.y - i
-        })  
+        })
       }
     }
     return xTiles
@@ -209,13 +209,13 @@ export class Mob extends Unit {
 
     const yTiles = [];
     if (yOff === -1) {
-      
+
       // south
       for (let i=start;i<end;i++){
         yTiles.push({
           x: this.location.x + i,
           y: this.location.y + 1
-        })  
+        })
       }
     }else if (yOff === 1){
 
@@ -224,7 +224,7 @@ export class Mob extends Unit {
         yTiles.push({
           x: this.location.x + i,
           y: this.location.y - this.size
-        })  
+        })
       }
     }
 
@@ -235,7 +235,7 @@ export class Mob extends Unit {
     return ''
   }
 
-  
+
   attackStep () {
 
     if (this.spawnDelay > 0) {
@@ -269,7 +269,7 @@ export class Mob extends Unit {
 
     this.attackStyle = this.attackStyleForNewAttack()
 
-    
+
     const weaponIsAreaAttack = this.weapons[this.attackStyle].isAreaAttack
     let isUnderAggro = false
     if (!weaponIsAreaAttack) {
@@ -301,7 +301,7 @@ export class Mob extends Unit {
     }
     this.weapons[this.attackStyle].attack(this, this.aggro as Unit /* hack */, { attackStyle: this.attackStyle, magicBaseSpellDamage: this.magicMaxHit() })
 
-    
+
 
     this.playAttackSound()
 
@@ -365,18 +365,21 @@ export class Mob extends Unit {
     if (Settings.displayFeedback){
       if (this.dying > -1) {
         this.region.context.fillStyle = '#964B0073'
-      } else if (this.attackFeedback === AttackIndicators.BLOCKED) {
-        this.region.context.fillStyle = '#00FF0073'
-      } else if (this.attackFeedback === AttackIndicators.HIT) {
-        this.region.context.fillStyle = '#FF000073'
       } else if (this.attackFeedback === AttackIndicators.SCAN) {
         this.region.context.fillStyle = '#FFFF0073'
       } else if (this.hasLOS) {
         this.region.context.fillStyle = '#FF730073'
       } else {
         this.region.context.fillStyle = this.color;
-      }  
+      }
     }
+
+    if (this.attackFeedback === AttackIndicators.BLOCKED) {
+      this.region.context.fillStyle = '#00FF0073'
+    } else if (this.attackFeedback === AttackIndicators.HIT) {
+      this.region.context.fillStyle = '#FF000073'
+    }
+
     // Draw mob
     this.region.context.fillRect(
       -(this.size * Settings.tileSize) / 2,
@@ -386,13 +389,13 @@ export class Mob extends Unit {
     )
   }
 
-  
+
   draw (tickPercent: number) {
     if (Settings.displayMobLoS){
       LineOfSight.drawLOS(this.region, this.location.x, this.location.y, this.size, this.attackRange, '#FF000055', this.type === UnitTypes.MOB)
     }
 
-    
+
     const perceivedX = Pathing.linearInterpolation(this.perceivedLocation.x, this.location.x, tickPercent)
     const perceivedY = Pathing.linearInterpolation(this.perceivedLocation.y, this.location.y, tickPercent)
     this.region.context.save()
@@ -486,7 +489,7 @@ export class Mob extends Unit {
     if (Settings.rotated === 'south') {
       this.region.context.rotate(Math.PI)
     }
-    
+
     this.drawHPBar()
 
     this.drawHitsplats()
